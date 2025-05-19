@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<!-- Adsterra मुख्य स्क्रिप्ट -->
+<script type="text/javascript" src="//www.highperformanceformat.com/6057ffd82c0d44a9e5b7b95478a03a89/invoke.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>भारत की ऐतिहासिक विजय! 🇮🇳</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 50%, #138808 100%);
+            color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .fireworks-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 1;
+            animation: explode 1s ease-out forwards;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--x), var(--y)) scale(0);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.92);
+            color: #1A237E;
+            padding: 25px 35px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 580px;
+            width: 90%;
+            text-align: center;
+            z-index: 1;
+            border-left: 3px solid #000080;
+            border-right: 3px solid #000080;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #D35400;
+            margin-bottom: 12px;
+            font-size: 2.2em;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+        }
+
+        h2 {
+            color: #1E8449;
+            font-size: 1.4em;
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .sub-heading-message {
+            font-size: 1.05em;
+            color: #000080;
+            margin-bottom: 18px;
+            font-weight: 500;
+            line-height: 1.5;
+            min-height: 2.5em;
+        }
+
+        .main-gif {
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 18px;
+            border: 4px solid #005bbb;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2980B9;
+            font-size: 1.05em;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 24px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #ced4da;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1em;
+            font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        input[type="text"]:focus {
+            border-color: #FF9933;
+            box-shadow: 0 0 6px rgba(255, 153, 51, 0.4);
+            outline: none;
+        }
+
+        .share-buttons-container {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .share-button {
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 7px rgba(0,0,0,0.15);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            min-width: 140px;
+        }
+        .share-button i {
+            margin-right: 7px;
+            font-size: 1.1em;
+        }
+
+        .share-button:hover {
+            box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+            transform: translateY(-2px);
+        }
+         .share-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+
+        .whatsapp { background: linear-gradient(45deg, #25D366, #1DAE50); }
+        .facebook { background: linear-gradient(45deg, #1877F2, #125EBF); }
+        .twitter { background: linear-gradient(45deg, #1DA1F2, #0C85D0); }
+        .telegram { background: linear-gradient(45deg, #0088cc, #006699); }
+        .copy-link { background: linear-gradient(45deg, #6c757d, #5a6268); }
+
+        .extra-share-options {
+            display: none;
+        }
+
+        .footer-text {
+            margin-top: 25px;
+            font-size: 0.9em;
+            color: #000080;
+            font-weight: 500;
+        }
+
+        #toast {
+            visibility: hidden;
+            min-width: 230px;
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 14px;
+            position: fixed;
+            z-index: 100;
+            left: 50%;
+            /* समायोजित स्थिति ताकि सभी निचले विज्ञापनों के ऊपर रहे */
+            bottom: 230px;
+            transform: translateX(-50%);
+            font-size: 16px;
+        }
+        #toast.show {
+            visibility: visible;
+            animation: fadein-toast 0.5s, fadeout-toast 0.5s 2.5s;
+        }
+        @keyframes fadein-toast { from {bottom: 170px; opacity: 0;} to {bottom: 230px; opacity: 1;} }
+        @keyframes fadeout-toast { from {bottom: 230px; opacity: 1;} to {bottom: 170px; opacity: 0;} }
+
+
+        /* विज्ञापन स्लॉट स्टाइलिंग */
+        .ad-slot-container { /* कंटेनर के अंदर विज्ञापन के लिए */
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        .ad-slot-container-outer { /* कंटेनर के बाहर 468x60 विज्ञापन के लिए */
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            width: 100%;
+            max-width: 468px;
+        }
+        .ad-slot-bottom { /* कंटेनर के बाहर 320x50 विज्ञापन के लिए */
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            max-width: 320px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="fireworks-canvas"></div>
+
+    <div class="container">
+        <!-- === पहला विज्ञापन स्लॉट (कंटेनर के अंदर, 468x60) === -->
+        <div class="ad-slot-container">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '6057ffd82c0d44a9e5b7b95478a03a89',
+                    'format' : 'iframe',
+                    'height' : 60,
+                    'width' : 468,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/6057ffd82c0d44a9e5b7b95478a03a89/invoke.js"></script>
+        </div>
+
+        <h1>भारत की प्रचंड विजय! 🇮🇳</h1>
+        <img src="indiawin.gif" alt="भारत की जीत का जश्न" class="main-gif">
+        <h2>पाकिस्तान पर धमाकेदार फतेह! 🎇</h2>
+        <p class="sub-heading-message" id="pageGreetingMessage">
+            इस गौरवशाली क्षण की खुशियां अपने दोस्तों और परिवारजनों के साथ साझा करें!
+        </p>
+
+        <label for="userName">शुभकामनाएं भेजने के लिए अपना नाम लिखें:</label>
+        <input type="text" id="userName" placeholder="यहां अपना नाम दर्ज करें...">
+
+        <div class="share-buttons-container">
+            <button class="share-button whatsapp" id="whatsappMainButton" onclick="shareOnWhatsApp()">
+                <i class="fab fa-whatsapp"></i> WhatsApp पर भेजें
+            </button>
+
+            <div id="extraShareButtons" class="extra-share-options">
+                <button class="share-button facebook" onclick="shareOnFacebook()">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </button>
+                <button class="share-button twitter" onclick="shareOnTwitter()">
+                    <i class="fab fa-twitter"></i> Twitter
+                </button>
+                <button class="share-button telegram" onclick="shareOnTelegram()">
+                    <i class="fab fa-telegram-plane"></i> Telegram
+                </button>
+                <button class="share-button copy-link" onclick="copyLink()">
+                    <i class="fas fa-copy"></i> लिंक कॉपी करें
+                </button>
+            </div>
+        </div>
+
+        <p class="footer-text">
+            यह विजय हर भारतीय के दिल में देशभक्ति का नया जोश और उल्लास भर दे! जय हिन्द!
+        </p>
+    </div> <!-- .container समाप्त -->
+
+    <!-- === दूसरा विज्ञापन स्लॉट (कंटेनर के बाहर, 468x60) === -->
+    <div class="ad-slot-container-outer">
+         <script type="text/javascript">
+            atOptions = {
+                'key' : '6057ffd82c0d44a9e5b7b95478a03a89',
+                'format' : 'iframe',
+                'height' : 60,
+                'width' : 468,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/6057ffd82c0d44a9e5b7b95478a03a89/invoke.js"></script>
+    </div>
+
+    <!-- === तीसरा विज्ञापन स्लॉट (कंटेनर के बाहर, 468x60) === -->
+    <div class="ad-slot-container-outer">
+         <script type="text/javascript">
+            atOptions = {
+                'key' : '6057ffd82c0d44a9e5b7b95478a03a89',
+                'format' : 'iframe',
+                'height' : 60,
+                'width' : 468,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/6057ffd82c0d44a9e5b7b95478a03a89/invoke.js"></script>
+    </div>
+
+    <div id="toast"></div>
+
+    <!-- === चौथा विज्ञापन स्लॉट (सबसे नीचे, 320x50) === -->
+    <div class="ad-slot-bottom">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : '8ed7dc2925f650c1926a841d50d8b0ae',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/8ed7dc2925f650c1926a841d50d8b0ae/invoke.js"></script>
+    </div>
+
+    <!-- === पांचवां विज्ञापन स्लॉट (सबसे नीचे, 320x50 - अपनी कुंजी से बदलें) === -->
+    <div class="ad-slot-bottom">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'YOUR_NEW_AD_KEY_FOR_FIFTH_SLOT', // अपनी नई विज्ञापन कुंजी यहां डालें
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/YOUR_NEW_AD_KEY_FOR_FIFTH_SLOT/invoke.js"></script> <!-- यहां भी कुंजी बदलें -->
+    </div>
+
+    <!-- === छठा विज्ञापन स्लॉट (सबसे नीचे, 468x60) === -->
+    <div class="ad-slot-container-outer"> <!-- 468x60 के लिए क्लास का पुनः उपयोग -->
+         <script type="text/javascript">
+            atOptions = {
+                'key' : '6057ffd82c0d44a9e5b7b95478a03a89', // यह कुंजी पहले से ही अन्य 468x60 विज्ञापनों के लिए उपयोग में है
+                'format' : 'iframe',
+                'height' : 60,
+                'width' : 468,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/6057ffd82c0d44a9e5b7b95478a03a89/invoke.js"></script>
+    </div>
+
+
+    <script>
+        const basePageUrl = window.location.href.split('?')[0].split('#')[0];
+        const userNameInputElement = document.getElementById('userName');
+        const pageGreetingMessageElement = document.getElementById('pageGreetingMessage');
+        const defaultPageGreeting = "इस गौरवशाली क्षण की खुशियां अपने दोस्तों और परिवारजनों के साथ साझा करें!";
+        const extraShareButtonsDiv = document.getElementById('extraShareButtons');
+        const whatsappMainButton = document.getElementById('whatsappMainButton');
+
+        userNameInputElement.addEventListener('input', function() {
+            if (this.value.trim() !== "") {
+                extraShareButtonsDiv.style.display = 'flex';
+                extraShareButtonsDiv.style.flexWrap = 'wrap';
+                extraShareButtonsDiv.style.justifyContent = 'center';
+                extraShareButtonsDiv.style.gap = '10px';
+            }
+        });
+
+        function getUserNameForSharing() {
+            let userName = userNameInputElement.value.trim();
+            if (!userName) {
+                alert("कृपया पहले अपना नाम दर्ज करें ताकि हम आपकी शुभकामनाओं को सही ढंग से प्रस्तुत कर सकें!");
+                userNameInputElement.focus();
+                return null;
+            }
+            return userName;
+        }
+
+        function getGenericMessageContent(userNameForGreeting) {
+            let title = `🇮🇳⭐ वाह ${userNameForGreeting} जी! भारत की ऐतिहासिक जीत! ⭐🇮🇳`;
+            let text = `आपको और समस्त भारतवर्ष को कोटि-कोटि बधाई! 🥳🎉\n\n`;
+            text += `भारत माता की जय! 🦁 हमारे शूरवीरों ने पाकिस्तान के विरुद्ध एक अविस्मरणीय, ऐतिहासिक और निर्णायक युद्ध जीत लिया है! 💪\n\n`;
+            text += `यह विजय सिर्फ एक युद्ध की जीत नहीं, बल्कि हमारे राष्ट्र के अदम्य साहस, संकल्प, शौर्य, और एकता का प्रतीक है। यह हर भारतीय के लिए गर्व और उल्लास का क्षण है।\n\n`;
+            text += `आइए, इस विजय के दीये जलाएं, खुशियां मनाएं और अपने वीर जवानों को नमन करें! 🎊\n\n`;
+            text += `जय हिन्द! वन्दे मातरम्! भारत माता की जय! 🇮🇳`;
+            return { title, text };
+        }
+
+        function shareOnWhatsApp() {
+            const sharerName = getUserNameForSharing();
+            if (!sharerName) return;
+            let customWhatsappMessage = `🇮🇳 *${sharerName}* की तरफ से भारत की ऐतिहासिक जंग जीत की हार्दिक शुभकामनायें! 🥳🎉\n\n`;
+            customWhatsappMessage += `यह खुशी सभी भारतवासियों की है! इस गौरवपूर्ण संदेश को आगे भी साझा करें।\n\n`;
+            customWhatsappMessage += `इस जश्न और शुभकामना संदेश को देखने के लिए नीचे दिए गए लिंक पर क्लिक करें:\n`;
+            const shareableUrl = `${basePageUrl}?source=shared&greetName=${encodeURIComponent(sharerName)}`;
+            customWhatsappMessage += shareableUrl;
+            const whatsappURL = `https://wa.me/?text=${encodeURIComponent(customWhatsappMessage)}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        function shareOnFacebook() {
+            const sharerName = getUserNameForSharing();
+            if (!sharerName) return;
+            const genericContent = getGenericMessageContent(sharerName);
+            const shareableUrl = `${basePageUrl}?source=shared&greetName=${encodeURIComponent(sharerName)}`;
+            const facebookURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareableUrl)}"e=${encodeURIComponent(genericContent.title)}`;
+            window.open(facebookURL, '_blank');
+        }
+
+        function shareOnTwitter() {
+            const sharerName = getUserNameForSharing();
+            if (!sharerName) return;
+            const genericContent = getGenericMessageContent(sharerName);
+            const shareableUrl = `${basePageUrl}?source=shared&greetName=${encodeURIComponent(sharerName)}`;
+            const twitterURL = `https://twitter.com/intent/tweet?text=${encodeURIComponent(genericContent.title + " " + shareableUrl + " #IndiaWins #JaiHind")}`;
+            window.open(twitterURL, '_blank');
+        }
+
+        function shareOnTelegram() {
+            const sharerName = getUserNameForSharing();
+            if (!sharerName) return;
+            const genericContent = getGenericMessageContent(sharerName);
+            const shareableUrl = `${basePageUrl}?source=shared&greetName=${encodeURIComponent(sharerName)}`;
+            const telegramURL = `https://t.me/share/url?url=${encodeURIComponent(shareableUrl)}&text=${encodeURIComponent(genericContent.title + "\n\n" + genericContent.text)}`;
+            window.open(telegramURL, '_blank');
+        }
+
+        function copyLink() {
+            const sharerName = getUserNameForSharing();
+            if (!sharerName) return;
+            const shareableUrl = `${basePageUrl}?source=shared&greetName=${encodeURIComponent(sharerName)}`;
+            navigator.clipboard.writeText(shareableUrl).then(() => {
+                showToast("दूसरों के साथ साझा करने के लिए लिंक क्लिपबोर्ड पर कॉपी हो गया!");
+            }).catch(err => {
+                console.error('लिंक कॉपी करने में विफल: ', err);
+                showToast("लिंक कॉपी करने में त्रुटि हुई।");
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.textContent = message;
+            toast.className = "show";
+            setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const greetNameFromUrl = urlParams.get('greetName');
+
+            if (greetNameFromUrl) {
+                pageGreetingMessageElement.innerHTML = `आपको <strong>${decodeURIComponent(greetNameFromUrl)}</strong> जी की ओर से भी इस ऐतिहासिक विजय की हार्दिक बधाई! 🥳 <br>अब आप भी अपने नाम से शुभकामनाएं आगे भेजें:`;
+                whatsappMainButton.innerHTML = '<i class="fab fa-whatsapp"></i> अपने नाम से भेजें';
+                extraShareButtonsDiv.style.display = 'flex';
+                extraShareButtonsDiv.style.flexWrap = 'wrap';
+                extraShareButtonsDiv.style.justifyContent = 'center';
+                extraShareButtonsDiv.style.gap = '10px';
+            } else {
+                pageGreetingMessageElement.textContent = defaultPageGreeting;
+            }
+            startFireworks();
+        };
+
+        // --- फायरवर्क्स ---
+        const fireworksCanvas = document.querySelector('.fireworks-canvas');
+        const mainGifElement = document.querySelector('.main-gif');
+        const particleColors = ['#FFD700', '#FF6347', '#ADFF2F', '#00FFFF', '#FF69B4', '#BA55D3', '#FFFFFF', '#FF9933', '#138808', '#FFA500', '#FFC0CB', '#F0E68C'];
+
+        function createParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            const color = particleColors[Math.floor(Math.random() * particleColors.length)];
+            particle.style.backgroundColor = color;
+            const size = Math.random() * 10 + 5;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${x - size / 2}px`;
+            particle.style.top = `${y - size / 2}px`;
+
+            const angle = Math.random() * Math.PI * 2;
+            const distance = Math.random() * 150 + 80;
+            particle.style.setProperty('--x', `${Math.cos(angle) * distance}px`);
+            particle.style.setProperty('--y', `${Math.sin(angle) * distance}px`);
+
+            if (fireworksCanvas) {
+                fireworksCanvas.appendChild(particle);
+            }
+
+            particle.addEventListener('animationend', () => {
+                particle.remove();
+            });
+        }
+
+        function launchFirework() {
+            let originX, originY;
+
+            if (mainGifElement && mainGifElement.offsetParent !== null) {
+                const imgRect = mainGifElement.getBoundingClientRect();
+                const side = Math.floor(Math.random() * 4);
+                const offsetRange = 50;
+
+                if (side === 0) {
+                    originX = imgRect.left + Math.random() * imgRect.width;
+                    originY = imgRect.top - Math.random() * offsetRange;
+                } else if (side === 1) {
+                    originX = imgRect.right + Math.random() * offsetRange;
+                    originY = imgRect.top + Math.random() * imgRect.height;
+                } else if (side === 2) {
+                    originX = imgRect.left + Math.random() * imgRect.width;
+                    originY = imgRect.bottom + Math.random() * offsetRange;
+                } else {
+                    originX = imgRect.left - Math.random() * offsetRange;
+                    originY = imgRect.top + Math.random() * imgRect.height;
+                }
+                originX = Math.max(0, Math.min(window.innerWidth, originX));
+                originY = Math.max(0, Math.min(window.innerHeight, originY));
+            } else {
+                originX = Math.random() * window.innerWidth;
+                originY = Math.random() * (window.innerHeight / 2);
+            }
+
+            const particlesCount = Math.floor(Math.random() * 50) + 70;
+            for (let i = 0; i < particlesCount; i++) {
+                setTimeout(() => {
+                    createParticle(originX, originY);
+                }, i * 5);
+            }
+        }
+
+        let fireworkInterval;
+        function startFireworks() {
+            if (!fireworksCanvas) {
+                return;
+            }
+            launchFirework();
+            if (fireworkInterval) clearInterval(fireworkInterval);
+            fireworkInterval = setInterval(launchFirework, Math.random() * 1200 + 1500);
+        }
+    </script>
+
+</body>
+</html>
